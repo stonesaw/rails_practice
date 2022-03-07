@@ -1,0 +1,21 @@
+<p>
+  <strong>Title:</strong>
+  <%= @article.title %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @article.body %>
+</p>
+
+<h2>Comments</h2>
+<%= render @article.comments %>
+
+<h2>Add a comment:</h2>
+<%= render "comments/form" %>
+
+<%= link_to '< Back to List', articles_path %> |
+<%= link_to '✒ Edit Article', edit_article_path(@article) %> |
+<%= link_to "🗑 Delete Article", article_path(@article),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %>
